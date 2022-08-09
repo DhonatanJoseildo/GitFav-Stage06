@@ -7,16 +7,23 @@
 :root{
   font-size: 62.5%;
 
-  --ff-primary: 'Poppins', sans-serif;
-  --text-color: #303030;
+  --ff-primary: 'Roboto', sans-serif;
+  --text-color: #E1E1E6;
 
-  --hue: 194;
-  --primary-color: hsl(var(--hue), 100%, 63%);
+  --hue: 191;
+  --primary-color: hsla(var(--hue), 31%, 42%, 1);
+
+  --bg-button:hsla(195, 91%, 25%, 1);
+  --bg-hover-button:hsla(0, 0%, 100%, 1);
+  --color-button:hsla(0, 0%, 100%, 1);
+  --color-hover-button:hsla(195, 91%, 25%, 1);
+
+  
 }
 body{
   font-size: 1.6rem;
   color: var(--text-color);
-  background-color: azure;
+  background-color: black;
 }
 
 body * {
@@ -37,7 +44,7 @@ body * {
 
 #app{
   padding: 2rem;
-  max-width: 500px;
+  max-width: 122rem;
   margin: 0 auto;
 }
 
@@ -49,35 +56,49 @@ header {
   margin: 2.5rem 0;
 }
 
-header h1{
-  font-size: 2rem;
-  text-transform: uppercase;
-}
-
 header .search{
   display: flex;
   align-items: center;
+
+  min-width: 64rem;
 }
 
 .search input{
-  height: 3.2rem;
-  border: 1px solid #ccc;
-  border-radius: .4rem 0 0 .4rem;
-  padding: 0 .8rem;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1.6rem;
+  gap: 1rem;
+
+  background-color: hsla(191, 65%, 7%, 1);
+  color: whitesmoke;
+  border: none;
+  margin-right: .8rem;
 }
 
 .search button{
-  background-color: var(--primary-color);
-  border-radius: 0 .4rem .4rem 0;
-  height: 3.2rem;
+  background-color: var(--bg-button);
+  color: var(--color-button);
+  border-radius: .5rem;
   border: none;
-  padding: 0 1rem;
+  padding: 1.2rem 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .8rem;
 
+  font-weight: 700;
+  text-transform: uppercase;
   cursor: pointer;
 }
 
 .search button:hover{
-  filter: brightness(1.1rem);
+  background-color: var(--bg-hover-button);
+  color: var(--color-hover-button);
+}
+
+.search button:hover svg path{
+  fill: var(--color-hover-button);
 }
 
 table{
@@ -85,6 +106,8 @@ table{
   border-collapse: collapse;
 
   box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
+  border: 1px solid #4A808C;
+  border-radius: .4rem;
 }
 
 table * {
@@ -95,25 +118,17 @@ table * {
 table th {
   background: var(--primary-color);
   text-align: left;
-  font-weight: normal;
+  font-weight: 700;
   padding: 1.5rem;
 }
 
-table th:first-child{
-  border-top-left-radius: .4rem;
-}
-
-
-table th:last-child{
-  border-top-right-radius: .4rem;
-}
-
 table tr:nth-child(even){
-  background-color: #eee;
+  background-color: hsla(191, 31%, 42%, 0.2);
+  border: 1px solid #4A808C;
 }
 
 table tr:nth-child(odd){
-  background-color: #ddd;
+  background-color: hsla(195, 61%, 6%, 0.5);
 }
 
 table td{

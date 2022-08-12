@@ -181,7 +181,7 @@ td .remove{
 }
 
 table tbody tr.notFav{
-  height: 62.4rem;
+  height: 58rem;
   position: relative;
   background-color: initial;
 }
@@ -211,4 +211,15 @@ table tbody tr.notFav{
   line-height: 2.478rem;
   color: hsla(189, 4%, 32%, 1);
   min-height: 3.1rem;
+}
+thead tr, tbody tr{
+  display: flex;
+}
+
+thead tr th:first-child, tbody tr td:first-child{
+  flex: 2;
+}
+
+thead tr th, tbody tr td{
+  flex: 1;
 }

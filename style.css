@@ -21,9 +21,12 @@
   
 }
 body{
+  min-height: 100vh;
   font-size: 1.6rem;
   color: var(--text-color);
   background-color: black;
+  background-image: linear-gradient(black 50%, rgb(109, 15, 109));
+  background-repeat: no-repeat;
 }
 
 body * {

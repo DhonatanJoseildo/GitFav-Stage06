@@ -77,6 +77,11 @@ export class FavoritesView extends Favorites {
   update(){
     this.removeAllTr()
 
+    if (this.entries[0] == undefined) {
+      this.isRowExist()
+      return
+    }
+
     this.entries.forEach( user => {
       const row = this.createRow()
 
@@ -119,7 +124,7 @@ export class FavoritesView extends Favorites {
         9589
       </td>
       <td>
-        <button class="remove">&times;</button>
+        <button class="remove">Remover</button>
       </td>
     `
     tr.innerHTML = content
@@ -134,4 +139,18 @@ export class FavoritesView extends Favorites {
       tr.remove()
     })
   }
+
+  isRowExist(){
+    const tr = document.createElement('tr')
+    tr.classList.add('notFav')
+    const content = `
+      <div class="notFavorites">
+        <img src="./assets/Estrela.svg" alt="imagem de uma Estrela">
+        <h1> Nenhum favorito ainda </h1>
+      </div>
+    `
+    tr.innerHTML = content
+    this.tbody.append(tr)
+  }
+
 }
